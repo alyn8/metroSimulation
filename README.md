@@ -50,7 +50,8 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
 ## ÖRNEK KULLANIM VE TEST SONUÇLARI
 
 
-`# Metro ağı oluştur
+'''python
+# Metro ağı oluştur
 metro = MetroAgi()
 
 # İstasyonlar ekle
@@ -143,5 +144,5 @@ if sonuc:
 # Metro haritasını çiz
 metro_map(metro)
 
-`
+'''
 
