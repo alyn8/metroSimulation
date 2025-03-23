@@ -179,7 +179,7 @@ if sonuc:
     rota, sure = sonuc
     print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota))
 ```
-### METRO HARİTASI GRAFİĞİ OLUŞTURMA
+### 📍🗺 METRO HARİTASI GRAFİĞİ OLUŞTURMA
 ```python
 def metro_map(metro: MetroAgi):
 
