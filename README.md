@@ -1,4 +1,4 @@
-# METRO AĞI SİMULASYONU VE ROTA PLANLAMA
+# METRO SİMULASYONU VE ROTA PLANLAMA
 
 Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bulur vebu metro ağını temsil eden bir graf yapısı oluşturur. Proje, kullanıcıların iki istasyon arasında en uygun rotayı bulmasına yardımcı olur. Ayrıca, metro ağını görselleştirerek harita üzerinde gösterir.
 
@@ -124,7 +124,8 @@ def metro_map(metro: MetroAgi):
     plt.show()
 metro_map(metro)
 ```
-
+## OUTPUTS
+![Alt text](main/metroMap.png)
 
 
 
