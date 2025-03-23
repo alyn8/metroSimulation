@@ -62,7 +62,7 @@ def en_az_aktarma_bul(self, baslangic_id: str, hedef_id: str) -> Optional[List[I
                     kuyruk.append((komsu, rota + [komsu]))
         return None
 ```
-####🤔 Nasıl Çalışır❓:
+#### 🤔Nasıl Çalışır❓:
 1. **Başlangıç ve Hedef Kontrolü**: Eğer başlangıç veya hedef istasyonu metro ağında yoksa, `None` döner.
 2. **Kuyruk Oluşturma**: Başlangıç istasyonu ve o ana kadar oluşturulan rota, bir kuyruğa (`deque`) eklenir.
 3. **Ziyaret Edilenler**: Ziyaret edilen istasyonlar bir küme (`set`) içinde tutulur.
@@ -72,7 +72,7 @@ def en_az_aktarma_bul(self, baslangic_id: str, hedef_id: str) -> Optional[List[I
    - İstasyonun komşuları kontrol edilir. Eğer komşu daha önce ziyaret edilmemişse, kuyruğa eklenir.
 5. **Sonuç**: Hedef bulunamazsa, `None` döner.
 
-####🤔 Neden Kullanıldı❓:
+#### 🤔Neden Kullanıldı❓:
   * En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
 ### ✔ A* Algoritması:
@@ -105,7 +105,7 @@ Bu algoritma, **A*** yöntemini kullanarak başlangıç istasyonundan hedef ista
                     heapq.heappush(pq, (yeni_sure, id(komsu), komsu, yeni_rota))
         return None
 ```
-####🤔 Nasıl Çalışır❓: 
+#### 🤔Nasıl Çalışır❓: 
 1. **Başlangıç ve Hedef Kontrolü**: Eğer başlangıç veya hedef istasyonu metro ağında yoksa, `None` döner.
 2. **Öncelikli Kuyruk Oluşturma**: Başlangıç istasyonu, toplam süre (0), ve rota bir öncelikli kuyruğa (`heapq`) eklenir.
 3. **Ziyaret Edilenler**: Ziyaret edilen istasyonlar bir küme (`set`) içinde tutulur.
@@ -115,7 +115,7 @@ Bu algoritma, **A*** yöntemini kullanarak başlangıç istasyonundan hedef ista
    - İstasyonun komşuları kontrol edilir. Eğer komşu daha önce ziyaret edilmemişse, yeni rota ve toplam süre hesaplanarak kuyruğa eklenir.
 5. **Sonuç**: Hedef bulunamazsa, `None` döner.
 
-####🤔Neden Kullanıldı❓:
+#### 🤔Neden Kullanıldı❓:
   * En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
     
   * Özellikle büyük ölçekli graf yapılarında daha verimlidir.
