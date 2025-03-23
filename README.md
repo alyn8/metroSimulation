@@ -143,6 +143,5 @@ if sonuc:
 
 # Metro haritasını çiz
 metro_map(metro)
-
-'''
+```
 
