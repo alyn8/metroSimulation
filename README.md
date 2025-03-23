@@ -10,20 +10,21 @@ from typing import Dict, List, Set, Tuple, Optional
 import networkx as nx
 import matplotlib.pyplot as plt
 ```
+[![networkx](https://img.shields.io/badge/networkx-2.6.3-blue)](https://networkx.org/)
 
-* networkx: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
+**networkx**: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
 
-* matplotlib: Grafın görselleştirilmesi ve haritanın çizilmesi için kullanıldı.
+**matplotlib**: Grafın görselleştirilmesi ve haritanın çizilmesi için kullanıldı.
 
-* heapq: Dijkstra algoritmasında öncelikli kuyruk (priority queue) yapısını uygulamak için kullanıldı.
+**heapq**: Dijkstra algoritmasında öncelikli kuyruk (priority queue) yapısını uygulamak için kullanıldı.
 
-* collections:
+**collections**:
 
-  * defaultdict: Hatların istasyon listelerini saklamak için kullanıldı.
+  * `defaultdict`: Hatların istasyon listelerini saklamak için kullanıldı.
 
-  * deque: BFS algoritmasında kuyruk yapısını uygulamak için kullanıldı.
+  * `deque`: BFS algoritmasında kuyruk yapısını uygulamak için kullanıldı.
 
-* typing: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
+ **typing**: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
 
 ## ALGORİTMALARIN ÇALIŞMA MANTIĞI
 
@@ -35,7 +36,7 @@ import matplotlib.pyplot as plt
   
   * Hedef düğüme ulaşıldığında, en kısa yol (en az aktarmalı yol) bulunmuş olur.
   
-   Neden Kullanıldı:question::
+   Neden Kullanıldı :question::
   * En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
 ### A* Algoritması:
@@ -48,7 +49,7 @@ import matplotlib.pyplot as plt
     
   * Hedef düğüme ulaşıldığında, en kısa süreli rota bulunmuş olur.
   
-  Neden Kullanıldı:question::
+  Neden Kullanıldı :question::
   * En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
     
   * Özellikle büyük ölçekli graf yapılarında daha verimlidir.
@@ -65,12 +66,31 @@ metro.istasyon_ekle("K1", "Kızılay", "Kırmızı Hat")
 metro.istasyon_ekle("K2", "Ulus", "Kırmızı Hat")
 metro.istasyon_ekle("K3", "Demetevler", "Kırmızı Hat")
 metro.istasyon_ekle("K4", "OSB", "Kırmızı Hat")
+
+
+metro.istasyon_ekle("M1", "AŞTİ", "Mavi Hat")
+metro.istasyon_ekle("M2", "Kızılay", "Mavi Hat")  # Aktarma noktası
+metro.istasyon_ekle("M3", "Sıhhiye", "Mavi Hat")
+metro.istasyon_ekle("M4", "Gar", "Mavi Hat")
+
+metro.istasyon_ekle("T1", "Batıkent", "Turuncu Hat")
+metro.istasyon_ekle("T2", "Demetevler", "Turuncu Hat")  # Aktarma noktası
+metro.istasyon_ekle("T3", "Gar", "Turuncu Hat")  # Aktarma noktası
+metro.istasyon_ekle("T4", "Keçiören", "Turuncu Hat")
 ```
 ## Bağlantılar ekle
 ```
 metro.baglanti_ekle("K1", "K2", 4)  # Kızılay -> Ulus (4 dakika)
 metro.baglanti_ekle("K2", "K3", 6)  # Ulus -> Demetevler (6 dakika)
 metro.baglanti_ekle("K3", "K4", 8)  # Demetevler -> OSB (8 dakika)
+
+metro.baglanti_ekle("M1", "M2", 5)  # AŞTİ -> Kızılay
+metro.baglanti_ekle("M2", "M3", 3)  # Kızılay -> Sıhhiye
+metro.baglanti_ekle("M3", "M4", 4)  # Sıhhiye -> Gar
+
+metro.baglanti_ekle("T1", "T2", 7)  # Batıkent -> Demetevler
+metro.baglanti_ekle("T2", "T3", 9)  # Demetevler -> Gar
+metro.baglanti_ekle("T3", "T4", 5)  # Gar -> Keçiören
 ```
 ### Hat aktarma bağlantıları (aynı istasyon farklı hatlar)
 ```
@@ -80,7 +100,7 @@ metro.baglanti_ekle("M4", "T3", 2)  # Gar aktarma (2 dakika)
 ```
 ## TEST SENARYOLARI
 
-### Senaryo 1: AŞTİ'den OSB'ye
+### Örnek Senaryo: AŞTİ'den OSB'ye
 ```
 print("\n1. AŞTİ'den OSB'ye:")
 rota = metro.en_az_aktarma_bul("M1", "K4")
