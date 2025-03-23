@@ -4,11 +4,11 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
 
 ## KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
 ```
-from collections import defaultdict, deque
-import heapq
-from typing import Dict, List, Set, Tuple, Optional
-import networkx as nx
-import matplotlib.pyplot as plt
+- from collections - import defaultdict, deque
+- import heapq
+- from typing - import Dict, List, Set, Tuple, Optional
+- import networkx - as nx
+- import matplotlib.pyplot - as plt
 ```
 ## Kullanılan Kütüphaneler
 
@@ -35,30 +35,55 @@ import matplotlib.pyplot as plt
 ## ALGORİTMALARIN ÇALIŞMA MANTIĞI
 
 ### BFS (Breadth-First Search) Algoritması:
-  
-  * BFS, bir graf üzerinde genişliğine arama yapar. Başlangıç düğümünden başlar ve tüm komşularını ziyaret eder.
-  
-  * Her adımda, bir düğümün tüm komşuları keşfedilir ve kuyruğa eklenir.
-  
-  * Hedef düğüme ulaşıldığında, en kısa yol (en az aktarmalı yol) bulunmuş olur.
-  
-   Neden Kullanıldı :question::
+Bu algoritma, **Breadth-First Search (BFS)** yöntemini kullanarak başlangıç istasyonundan hedef istasyonuna en az aktarmalı rotayı bulur. BFS, graf üzerinde genişliğine arama yapar ve hedefe en kısa adım sayısıyla ulaşır.
+
+#### 🤔 Nasıl Çalışır❓:
+1. **Başlangıç ve Hedef Kontrolü**: Eğer başlangıç veya hedef istasyonu metro ağında yoksa, `None` döner.
+2. **Kuyruk Oluşturma**: Başlangıç istasyonu ve o ana kadar oluşturulan rota, bir kuyruğa (`deque`) eklenir.
+3. **Ziyaret Edilenler**: Ziyaret edilen istasyonlar bir küme (`set`) içinde tutulur.
+4. **Döngü**: Kuyruk boşalana kadar:
+   - Kuyruktan bir istasyon ve rota çıkarılır.
+   - Eğer bu istasyon hedef istasyon ise, rota döndürülür.
+   - İstasyonun komşuları kontrol edilir. Eğer komşu daha önce ziyaret edilmemişse, kuyruğa eklenir.
+5. **Sonuç**: Hedef bulunamazsa, `None` döner.
+
+#### Örnek:
+```
+rota = metro.en_az_aktarma_bul("K1", "K4")
+if rota:
+    print("En az aktarmalı rota:", " -> ".join(i.ad for i in rota))
+```
+####  Neden Kullanıldı❓:
   * En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
-### A* Algoritması:
 
-  * A*, hem başlangıç düğümünden mevcut düğüme olan gerçek maliyeti (g(n)), hem de mevcut düğümden hedef düğüme olan tahmini maliyeti (h(n)) kullanır.
-    
-  * Toplam maliyet f(n) = g(n) + h(n) şeklinde hesaplanır.
-    
-  * Öncelikli kuyruk (priority queue) kullanarak, en düşük f(n) değerine sahip düğümleri öncelikle işler.
-    
-  * Hedef düğüme ulaşıldığında, en kısa süreli rota bulunmuş olur.
-  
-  Neden Kullanıldı :question::
+
+### A* Algoritması:
+Bu algoritma, **A*** yöntemini kullanarak başlangıç istasyonundan hedef istasyonuna en hızlı rotayı bulur. A*, Dijkstra algoritmasının gelişmiş bir versiyonudur ve hedefe yönelik bir sezgisel fonksiyon (`heuristic`) kullanır.
+
+#### 🤔 Nasıl Çalışır❓: 
+1. **Başlangıç ve Hedef Kontrolü**: Eğer başlangıç veya hedef istasyonu metro ağında yoksa, `None` döner.
+2. **Öncelikli Kuyruk Oluşturma**: Başlangıç istasyonu, toplam süre (0), ve rota bir öncelikli kuyruğa (`heapq`) eklenir.
+3. **Ziyaret Edilenler**: Ziyaret edilen istasyonlar bir küme (`set`) içinde tutulur.
+4. **Döngü**: Öncelikli kuyruk boşalana kadar:
+   - Kuyruktan en düşük toplam süreye sahip istasyon çıkarılır.
+   - Eğer bu istasyon hedef istasyon ise, rota ve toplam süre döndürülür.
+   - İstasyonun komşuları kontrol edilir. Eğer komşu daha önce ziyaret edilmemişse, yeni rota ve toplam süre hesaplanarak kuyruğa eklenir.
+5. **Sonuç**: Hedef bulunamazsa, `None` döner.
+
+### Örnek:
+
+`sonuc = metro.en_hizli_rota_bul("K1", "K4")
+if sonuc:
+    rota, sure = sonuc
+    print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota))`
+
+ #### Neden Kullanıldı❓:
   * En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
     
   * Özellikle büyük ölçekli graf yapılarında daha verimlidir.
+
+
 
 ## ÖRNEK KULLANIM VE TEST SONUÇLARI
 
