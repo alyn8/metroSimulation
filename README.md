@@ -31,13 +31,38 @@ import matplotlib.pyplot as plt
   * `deque`: BFS algoritmasında kuyruk yapısını uygulamak için kullanıldı.
 
  `typing`: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
- 
 
 ## ALGORİTMALARIN ÇALIŞMA MANTIĞI
 
 ### ✔ BFS (Breadth-First Search) Algoritması:
 Bu algoritma, **Breadth-First Search (BFS)** yöntemini kullanarak başlangıç istasyonundan hedef istasyonuna en az aktarmalı rotayı bulur. BFS, graf üzerinde genişliğine arama yapar ve hedefe en kısa adım sayısıyla ulaşır.
 
+```pyhton
+def en_az_aktarma_bul(self, baslangic_id: str, hedef_id: str) -> Optional[List[Istasyon]]:
+
+        if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar:
+            return None
+
+        baslangic = self.istasyonlar[baslangic_id]
+        hedef = self.istasyonlar[hedef_id]
+
+        kuyruk = deque([(baslangic, [baslangic])])
+
+        ziyaret_edildi = {baslangic}
+
+        while kuyruk:
+            mevcut_istasyon, rota = kuyruk.popleft()
+
+            if mevcut_istasyon == hedef:
+                return rota
+
+            ziyaret_edildi.add(mevcut_istasyon)
+
+            for komsu, _ in mevcut_istasyon.komsular:
+                if komsu not in ziyaret_edildi:
+                    kuyruk.append((komsu, rota + [komsu]))
+        return None
+```
 #### 🤔 Nasıl Çalışır❓:
 1. **Başlangıç ve Hedef Kontrolü**: Eğer başlangıç veya hedef istasyonu metro ağında yoksa, `None` döner.
 2. **Kuyruk Oluşturma**: Başlangıç istasyonu ve o ana kadar oluşturulan rota, bir kuyruğa (`deque`) eklenir.
@@ -51,11 +76,36 @@ Bu algoritma, **Breadth-First Search (BFS)** yöntemini kullanarak başlangıç 
 ####  Neden Kullanıldı❓:
   * En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
-
-
 ### ✔ A* Algoritması:
 Bu algoritma, **A*** yöntemini kullanarak başlangıç istasyonundan hedef istasyonuna en hızlı rotayı bulur. A*, Dijkstra algoritmasının gelişmiş bir versiyonudur ve hedefe yönelik bir sezgisel fonksiyon (`heuristic`) kullanır.
 
+```python
+ def en_hizli_rota_bul(self, baslangic_id: str, hedef_id: str) -> Optional[Tuple[List[Istasyon], int]]:
+
+        if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar:
+            return None
+
+        baslangic = self.istasyonlar[baslangic_id]
+        hedef = self.istasyonlar[hedef_id]
+
+        pq = [(0, id(baslangic), baslangic, [baslangic])]
+        ziyaret_edildi = set()
+
+        while pq:
+            toplam_sure, _, mevcut_istasyon, rota = heapq.heappop(pq)
+
+            if mevcut_istasyon == hedef:
+                return rota, toplam_sure
+
+            ziyaret_edildi.add(mevcut_istasyon)
+
+            for komsu, sure in mevcut_istasyon.komsular:
+                if komsu not in ziyaret_edildi:
+                    yeni_rota = rota + [komsu]
+                    yeni_sure = toplam_sure + sure
+                    heapq.heappush(pq, (yeni_sure, id(komsu), komsu, yeni_rota))
+        return None
+```
 #### 🤔 Nasıl Çalışır❓: 
 1. **Başlangıç ve Hedef Kontrolü**: Eğer başlangıç veya hedef istasyonu metro ağında yoksa, `None` döner.
 2. **Öncelikli Kuyruk Oluşturma**: Başlangıç istasyonu, toplam süre (0), ve rota bir öncelikli kuyruğa (`heapq`) eklenir.
@@ -70,7 +120,6 @@ Bu algoritma, **A*** yöntemini kullanarak başlangıç istasyonundan hedef ista
   * En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
     
   * Özellikle büyük ölçekli graf yapılarında daha verimlidir.
-
 
 
 ## ÖRNEK KULLANIM VE TEST SONUÇLARI
