@@ -2,7 +2,7 @@
 
 Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bulur vebu metro ağını temsil eden bir graf yapısı oluşturur. Proje, kullanıcıların iki istasyon arasında en uygun rotayı bulmasına yardımcı olur. Ayrıca, metro ağını görselleştirerek harita üzerinde gösterir.
 
-##KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
+## KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
 
 networkx: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
 
@@ -18,9 +18,9 @@ collections:
 
 typing: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
 
-##ALGORİTMALARIN ÇALIŞMA MANTIĞI
+## ALGORİTMALARIN ÇALIŞMA MANTIĞI
 
-###BFS (Breadth-First Search) Algoritması:
+### BFS (Breadth-First Search) Algoritması:
   
   BFS, bir graf üzerinde genişliğine arama yapar. Başlangıç düğümünden başlar ve tüm komşularını ziyaret eder.
   
@@ -31,7 +31,7 @@ typing: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
   Neden Kullanıldı?:
   En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
-###A* Algoritması:
+### A* Algoritması:
 
   A*, hem başlangıç düğümünden mevcut düğüme olan gerçek maliyeti (g(n)), hem de mevcut düğümden hedef düğüme olan tahmini maliyeti (h(n)) kullanır.
   Toplam maliyet f(n) = g(n) + h(n) şeklinde hesaplanır.
