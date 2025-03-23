@@ -125,7 +125,7 @@ def metro_map(metro: MetroAgi):
 metro_map(metro)
 ```
 ## OUTPUTS
-![Alt text](main/metroMap.png)
+![Alt text](metroMap.png)
 
 
 
