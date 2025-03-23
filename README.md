@@ -3,6 +3,13 @@
 Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bulur vebu metro ağını temsil eden bir graf yapısı oluşturur. Proje, kullanıcıların iki istasyon arasında en uygun rotayı bulmasına yardımcı olur. Ayrıca, metro ağını görselleştirerek harita üzerinde gösterir.
 
 ## KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
+```
+from collections import defaultdict, deque
+import heapq
+from typing import Dict, List, Set, Tuple, Optional
+import networkx as nx
+import matplotlib.pyplot as plt
+```
 
 * networkx: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
 
@@ -46,11 +53,7 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
     
   * Özellikle büyük ölçekli graf yapılarında daha verimlidir.
 
-
 ## ÖRNEK KULLANIM VE TEST SONUÇLARI
-
-
-
 ```
 ## Metro ağı oluştur
 metro = MetroAgi()
@@ -76,7 +79,6 @@ metro.baglanti_ekle("M4", "T3", 2)  # Gar aktarma (2 dakika)
 ```
 
 ## TEST SENARYOLARI
-
 ```
 ### Senaryo 1: AŞTİ'den OSB'ye
 print("\n1. AŞTİ'den OSB'ye:")
@@ -126,6 +128,28 @@ metro_map(metro)
 ```
 ## OUTPUTS
 ![Alt text](metroMap.png)
+![Alt text](metroSimOutput.png)
+
+## PROJE GELİŞTİRME FİKİRLERİ
+1. Sezgisel Fonksiyon İyileştirmeleri
+A* algoritmasında kullanılan sezgisel fonksiyon (h(n)) daha hassas hale getirilebilir. Örneğin, istasyonlar arasındaki fiziksel mesafe veya trafik yoğunluğu dikkate alınabilir.
+
+2. Gerçek Zamanlı Veri Entegrasyonu
+Metro istasyonlarının gerçek zamanlı verilerini (örneğin, trenlerin konumu, gecikmeler) entegre ederek daha dinamik bir rota planlama sistemi oluşturulabilir.
+
+3. Kullanıcı Arayüzü
+Graf arayüzü yerine, kullanıcıların istasyonları seçebileceği ve rotaları görebileceği bir web veya mobil uygulama geliştirilebilir.
+
+4. Çoklu Ulaşım Modları
+Metro haritasına otobüs, tramvay gibi diğer ulaşım modları eklenerek daha kapsamlı bir rota planlama sistemi oluşturulabilir.
+
+5. Optimizasyonlar
+Büyük ölçekli metro ağları için veri yapıları ve algoritmalar optimize edilebilir.
+
+7. Görselleştirme İyileştirmeleri
+Harita üzerinde istasyonların hatlarını daha belirgin hale getirmek için renkler ve etiketler iyileştirilebilir.
+
+
 
 
 
