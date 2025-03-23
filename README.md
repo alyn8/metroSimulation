@@ -4,19 +4,19 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
 
 ## KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
 
-networkx: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
+* networkx: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
 
-matplotlib: Grafın görselleştirilmesi ve haritanın çizilmesi için kullanıldı.
+* matplotlib: Grafın görselleştirilmesi ve haritanın çizilmesi için kullanıldı.
 
-heapq: Dijkstra algoritmasında öncelikli kuyruk (priority queue) yapısını uygulamak için kullanıldı.
+* heapq: Dijkstra algoritmasında öncelikli kuyruk (priority queue) yapısını uygulamak için kullanıldı.
 
-collections:
+* collections:
 
-  defaultdict: Hatların istasyon listelerini saklamak için kullanıldı.
+  * defaultdict: Hatların istasyon listelerini saklamak için kullanıldı.
 
-  deque: BFS algoritmasında kuyruk yapısını uygulamak için kullanıldı.
+  * deque: BFS algoritmasında kuyruk yapısını uygulamak için kullanıldı.
 
-typing: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
+* typing: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
 
 ## ALGORİTMALARIN ÇALIŞMA MANTIĞI
 
@@ -28,7 +28,7 @@ typing: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
   
   Hedef düğüme ulaşıldığında, en kısa yol (en az aktarmalı yol) bulunmuş olur.
   
-  Neden Kullanıldı?:
+  Neden Kullanıldı :question: :
   En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
 ### A* Algoritması:
@@ -38,7 +38,7 @@ typing: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
   Öncelikli kuyruk (priority queue) kullanarak, en düşük f(n) değerine sahip düğümleri öncelikle işler.
   Hedef düğüme ulaşıldığında, en kısa süreli rota bulunmuş olur.
   
-  Neden Kullanıldı?:
+  Neden Kullanıldı :question: :
   En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
   Özellikle büyük ölçekli graf yapılarında daha verimlidir.    
 
