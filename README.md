@@ -11,7 +11,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 ```
 ## Kullanılan Kütüphaneler
-
 [![networkx](https://img.shields.io/badge/networkx-2.6.3-blue)](https://networkx.org/)
 [![matplotlib](https://img.shields.io/badge/matplotlib-3.4.3-orange)](https://matplotlib.org/)
 [![heapq](https://img.shields.io/badge/heapq-Python%20Standard%20Library-green)](https://docs.python.org/3/library/heapq.html)
@@ -37,7 +36,7 @@ import matplotlib.pyplot as plt
 ### ✔ BFS (Breadth-First Search) Algoritması:
 Bu algoritma, **Breadth-First Search (BFS)** yöntemini kullanarak başlangıç istasyonundan hedef istasyonuna en az aktarmalı rotayı bulur. BFS, graf üzerinde genişliğine arama yapar ve hedefe en kısa adım sayısıyla ulaşır.
 
-```pyhton
+```python
 def en_az_aktarma_bul(self, baslangic_id: str, hedef_id: str) -> Optional[List[Istasyon]]:
 
         if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar:
