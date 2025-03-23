@@ -22,23 +22,27 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
 
 ### BFS (Breadth-First Search) Algoritması:
   
-  BFS, bir graf üzerinde genişliğine arama yapar. Başlangıç düğümünden başlar ve tüm komşularını ziyaret eder.
+  * BFS, bir graf üzerinde genişliğine arama yapar. Başlangıç düğümünden başlar ve tüm komşularını ziyaret eder.
   
-  Her adımda, bir düğümün tüm komşuları keşfedilir ve kuyruğa eklenir.
+  * Her adımda, bir düğümün tüm komşuları keşfedilir ve kuyruğa eklenir.
   
-  Hedef düğüme ulaşıldığında, en kısa yol (en az aktarmalı yol) bulunmuş olur.
+  * Hedef düğüme ulaşıldığında, en kısa yol (en az aktarmalı yol) bulunmuş olur.
   
-  Neden Kullanıldı :question: :
-  En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
+  :question: Neden Kullanıldı:
+  * En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
 ### A* Algoritması:
 
-  A*, hem başlangıç düğümünden mevcut düğüme olan gerçek maliyeti (g(n)), hem de mevcut düğümden hedef düğüme olan tahmini maliyeti (h(n)) kullanır.
-  Toplam maliyet f(n) = g(n) + h(n) şeklinde hesaplanır.
-  Öncelikli kuyruk (priority queue) kullanarak, en düşük f(n) değerine sahip düğümleri öncelikle işler.
-  Hedef düğüme ulaşıldığında, en kısa süreli rota bulunmuş olur.
+  * A*, hem başlangıç düğümünden mevcut düğüme olan gerçek maliyeti (g(n)), hem de mevcut düğümden hedef düğüme olan tahmini maliyeti (h(n)) kullanır.
+    
+  * Toplam maliyet f(n) = g(n) + h(n) şeklinde hesaplanır.
+    
+  * Öncelikli kuyruk (priority queue) kullanarak, en düşük f(n) değerine sahip düğümleri öncelikle işler.
+    
+  * Hedef düğüme ulaşıldığında, en kısa süreli rota bulunmuş olur.
   
-  Neden Kullanıldı :question: :
-  En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
-  Özellikle büyük ölçekli graf yapılarında daha verimlidir.    
+  :question: Neden Kullanıldı:
+  * En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
+    
+  * Özellikle büyük ölçekli graf yapılarında daha verimlidir.    
 
