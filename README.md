@@ -4,7 +4,7 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
 
 ## KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
 ```
-- from collections - import defaultdict, deque
+$${\color{orange}from}$$ collections $${\color{orange}import}$$ defaultdict, deque
 - import heapq
 - from typing - import Dict, List, Set, Tuple, Optional
 - import networkx - as nx
@@ -31,10 +31,11 @@ Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bul
   * `deque`: BFS algoritmasında kuyruk yapısını uygulamak için kullanıldı.
 
  `typing`: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
+ 
 
 ## ALGORİTMALARIN ÇALIŞMA MANTIĞI
 
-### BFS (Breadth-First Search) Algoritması:
+### ✔ BFS (Breadth-First Search) Algoritması:
 Bu algoritma, **Breadth-First Search (BFS)** yöntemini kullanarak başlangıç istasyonundan hedef istasyonuna en az aktarmalı rotayı bulur. BFS, graf üzerinde genişliğine arama yapar ve hedefe en kısa adım sayısıyla ulaşır.
 
 #### 🤔 Nasıl Çalışır❓:
@@ -47,18 +48,12 @@ Bu algoritma, **Breadth-First Search (BFS)** yöntemini kullanarak başlangıç 
    - İstasyonun komşuları kontrol edilir. Eğer komşu daha önce ziyaret edilmemişse, kuyruğa eklenir.
 5. **Sonuç**: Hedef bulunamazsa, `None` döner.
 
-#### Örnek:
-```
-rota = metro.en_az_aktarma_bul("K1", "K4")
-if rota:
-    print("En az aktarmalı rota:", " -> ".join(i.ad for i in rota))
-```
 ####  Neden Kullanıldı❓:
   * En az aktarmalı rotayı bulmak için idealdir çünkü BFS, hedefe en kısa adım sayısıyla ulaşır.
 
 
 
-### A* Algoritması:
+### ✔ A* Algoritması:
 Bu algoritma, **A*** yöntemini kullanarak başlangıç istasyonundan hedef istasyonuna en hızlı rotayı bulur. A*, Dijkstra algoritmasının gelişmiş bir versiyonudur ve hedefe yönelik bir sezgisel fonksiyon (`heuristic`) kullanır.
 
 #### 🤔 Nasıl Çalışır❓: 
@@ -70,13 +65,6 @@ Bu algoritma, **A*** yöntemini kullanarak başlangıç istasyonundan hedef ista
    - Eğer bu istasyon hedef istasyon ise, rota ve toplam süre döndürülür.
    - İstasyonun komşuları kontrol edilir. Eğer komşu daha önce ziyaret edilmemişse, yeni rota ve toplam süre hesaplanarak kuyruğa eklenir.
 5. **Sonuç**: Hedef bulunamazsa, `None` döner.
-
-### Örnek:
-
-`sonuc = metro.en_hizli_rota_bul("K1", "K4")
-if sonuc:
-    rota, sure = sonuc
-    print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota))`
 
  #### Neden Kullanıldı❓:
   * En iyi çözümü garanti eder (eğer sezgisel fonksiyon doğruysa).
