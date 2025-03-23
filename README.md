@@ -10,21 +10,27 @@ from typing import Dict, List, Set, Tuple, Optional
 import networkx as nx
 import matplotlib.pyplot as plt
 ```
+## Kullanılan Kütüphaneler
+
 [![networkx](https://img.shields.io/badge/networkx-2.6.3-blue)](https://networkx.org/)
+[![matplotlib](https://img.shields.io/badge/matplotlib-3.4.3-orange)](https://matplotlib.org/)
+[![heapq](https://img.shields.io/badge/heapq-Python%20Standard%20Library-green)](https://docs.python.org/3/library/heapq.html)
+[![collections](https://img.shields.io/badge/collections-Python%20Standard%20Library-yellow)](https://docs.python.org/3/library/collections.html)
+[![typing](https://img.shields.io/badge/typing-Python%20Standard%20Library-lightgrey)](https://docs.python.org/3/library/typing.html)
 
-**networkx**: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
+`**networkx**`: Graf oluşturma, yönetme ve görselleştirme işlemleri için kullanıldı.
 
-**matplotlib**: Grafın görselleştirilmesi ve haritanın çizilmesi için kullanıldı.
+`**matplotlib**`: Grafın görselleştirilmesi ve haritanın çizilmesi için kullanıldı.
 
-**heapq**: Dijkstra algoritmasında öncelikli kuyruk (priority queue) yapısını uygulamak için kullanıldı.
+`**heapq**`: Dijkstra algoritmasında öncelikli kuyruk (priority queue) yapısını uygulamak için kullanıldı.
 
-**collections**:
+`**collections**`:
 
   * `defaultdict`: Hatların istasyon listelerini saklamak için kullanıldı.
 
   * `deque`: BFS algoritmasında kuyruk yapısını uygulamak için kullanıldı.
 
- **typing**: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
+ `**typing**`: Python'da tür ipuçları (type hints) eklemek için kullanıldı.
 
 ## ALGORİTMALARIN ÇALIŞMA MANTIĞI
 
