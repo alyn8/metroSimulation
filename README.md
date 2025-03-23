@@ -159,15 +159,15 @@ metro_map(metro)
 ## PROJE GELİŞTİRME FİKİRLERİ
 1. Sezgisel Fonksiyon İyileştirmeleri <br>
 A* algoritmasında kullanılan sezgisel fonksiyon (h(n)) daha hassas hale getirilebilir. Örneğin, istasyonlar arasındaki fiziksel mesafe veya trafik yoğunluğu dikkate alınabilir.
-3. Gerçek Zamanlı Veri Entegrasyonu <br>   
+2. Gerçek Zamanlı Veri Entegrasyonu <br>
 Metro istasyonlarının gerçek zamanlı verilerini (örneğin, trenlerin konumu, gecikmeler) entegre ederek daha dinamik bir rota planlama sistemi oluşturulabilir.
-5. Kullanıcı Arayüzü <br> 
+3. Kullanıcı Arayüzü <br> 
 Graf arayüzü yerine, kullanıcıların istasyonları seçebileceği ve rotaları görebileceği bir web veya mobil uygulama geliştirilebilir.
-7. Çoklu Ulaşım Modları <br> 
+4. Çoklu Ulaşım Modları <br> 
 Metro haritasına otobüs, tramvay gibi diğer ulaşım modları eklenerek daha kapsamlı bir rota planlama sistemi oluşturulabilir.
-9. Optimizasyonlar <br> 
+5. Optimizasyonlar <br> 
 Büyük ölçekli metro ağları için veri yapıları ve algoritmalar optimize edilebilir.
-11. Görselleştirme İyileştirmeleri <br> 
+6. Görselleştirme İyileştirmeleri <br> 
 Harita üzerinde istasyonların hatlarını daha belirgin hale getirmek için renkler ve etiketler iyileştirilebilir.
 
 
