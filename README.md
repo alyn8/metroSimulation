@@ -2,7 +2,7 @@
 
 Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bulur vebu metro ağını temsil eden bir graf yapısı oluşturur. Proje, kullanıcıların iki istasyon arasında en uygun rotayı bulmasına yardımcı olur. Ayrıca, metro ağını görselleştirerek harita üzerinde gösterir.
 
-## KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
+## 📚 KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
 ```python
 from collections import defaultdict, deque
 import heapq
@@ -217,7 +217,7 @@ metro_map(metro)
 ![Alt text](metroMap.png)
 ![Alt text](metroSimOutput.png)
 
-## PROJE GELİŞTİRME FİKİRLERİ
+## 💭 PROJE GELİŞTİRME FİKİRLERİ
 1. **Sezgisel Fonksiyon İyileştirmeleri** <br>
 A* algoritmasında kullanılan sezgisel fonksiyon (h(n)) daha hassas hale getirilebilir. Örneğin, istasyonlar arasındaki fiziksel mesafe veya trafik yoğunluğu dikkate alınabilir.
 2. **Gerçek Zamanlı Veri Entegrasyonu** <br>
