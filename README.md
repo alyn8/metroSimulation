@@ -3,12 +3,12 @@
 Bu proje, bir metro ağı üzerinde en az aktarmalı ve en hızlı rotaları bulur vebu metro ağını temsil eden bir graf yapısı oluşturur. Proje, kullanıcıların iki istasyon arasında en uygun rotayı bulmasına yardımcı olur. Ayrıca, metro ağını görselleştirerek harita üzerinde gösterir.
 
 ## KÜTÜPHANELER VE KULLANILAN TEKNOLOJİLER
-```
-$${\color{orange}from}$$ collections $${\color{orange}import}$$ defaultdict, deque
-- import heapq
-- from typing - import Dict, List, Set, Tuple, Optional
-- import networkx - as nx
-- import matplotlib.pyplot - as plt
+```python
+from collections import defaultdict, deque
+import heapq
+from typing import Dict, List, Set, Tuple, Optional
+import networkx as nx
+import matplotlib.pyplot as plt
 ```
 ## Kullanılan Kütüphaneler
 
@@ -132,7 +132,7 @@ if sonuc:
     print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota))
 ```
 ### METRO HARİTASI GRAFİĞİ OLUŞTURMA
-```
+```python
 def metro_map(metro: MetroAgi):
 
     G = nx.Graph()
@@ -165,7 +165,7 @@ def metro_map(metro: MetroAgi):
     plt.show()
 metro_map(metro)
 ```
-## OUTPUTS
+## ✅ OUTPUTS
 ![Alt text](metroMap.png)
 ![Alt text](metroSimOutput.png)
 
